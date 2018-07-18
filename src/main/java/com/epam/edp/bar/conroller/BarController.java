@@ -19,4 +19,9 @@ public class BarController {
         return barService.getFooConfig();
     }
 
+    @GetMapping(value = "/dumb/client")
+    public String dumbClient() {
+        return "Dumb client response from bar";
+    }
+
 }
