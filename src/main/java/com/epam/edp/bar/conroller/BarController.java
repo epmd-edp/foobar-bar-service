@@ -24,4 +24,9 @@ public class BarController {
         return "Dumb client response from bar";
     }
 
+    @GetMapping(value = "/feign/client")
+    public String feignClient() {
+        return "Feign client response from bar";
+    }
+
 }
