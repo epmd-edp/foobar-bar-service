@@ -191,12 +191,28 @@ objects:
             requests:
               memory: 1Gi
           env:
+          - name: JAVA_OPTIONS
+            value: >
+              -Dspring.cloud.kubernetes.secrets.paths=/etc/secrets
           - name: POSTGRES_DATABASE
             value: "bar-service-db"
           - name: POSTGRES_USER
             value: "admin"
           - name: POSTGRES_PASSWORD
             value: "admin"
+          volumeMounts:
+          - name: rabbitmq-secret
+            mountPath: "/etc/secrets/rabbitmq"
+            readOnly: true
+        volumes:
+        - name: rabbitmq-secret
+          secret:
+            secretName: rabbitmq-secret
+            items:
+              - key: rabbitmq.username
+                path: spring.rabbitmq.username
+              - key: rabbitmq.password
+                path: spring.rabbitmq.password
           terminationMessagePath: /dev/termination-log
           terminationMessagePolicy: File
         dnsPolicy: ClusterFirst
