@@ -9,13 +9,13 @@ import org.springframework.stereotype.Service;
 @Service
 public class BarServiceImpl implements BarService {
 
-    private String fooConfig = "default";
+    private String setting = "default-bar";
 
-    public void updateFooConfig(String fooConfig) {
-        this.fooConfig = fooConfig;
+    public void updateSetting(String setting) {
+        this.setting = setting;
     }
 
-    public String getFooConfig() {
-        return fooConfig;
+    public String getSetting() {
+        return setting;
     }
 }

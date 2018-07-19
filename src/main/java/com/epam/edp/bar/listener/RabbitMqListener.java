@@ -17,7 +17,7 @@ public class RabbitMqListener {
 
     @RabbitListener(queues = RabbitMqConfig.QUEUE)
     public void listenBroker(String message) {
-        barService.updateFooConfig(message);
+        barService.updateSetting(message);
     }
 
 }

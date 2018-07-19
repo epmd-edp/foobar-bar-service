@@ -5,7 +5,7 @@ package com.epam.edp.bar.service;
  */
 public interface BarService {
 
-    void updateFooConfig(String fooConfig);
+    void updateSetting(String fooConfig);
 
-    String getFooConfig();
+    String getSetting();
 }
