@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class BarServiceImpl implements BarService {
 
-    private String setting = "default-bar";
+    private String setting = "Angie";
 
     public void updateSetting(String setting) {
         this.setting = setting;
