@@ -48,7 +48,7 @@ objects:
     labels:
       app: "bar-service"
   spec:
-    replicas: 2
+    replicas: 1
     selector:
       app: "bar-service"
     strategy:
