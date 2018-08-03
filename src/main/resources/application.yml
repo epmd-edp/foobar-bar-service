@@ -6,3 +6,6 @@ spring:
     password: guest
     exchange: foo
     routingkey: foobar
+
+bar:
+  setting: Angie
