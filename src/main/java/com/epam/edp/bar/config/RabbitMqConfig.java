@@ -25,7 +25,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * Configuration for rabbitmq
+ * Configuration for rabbitmq.
+ *
+ * @author Pavlo_Yemelianov.
  **/
 @Configuration
 public class RabbitMqConfig {

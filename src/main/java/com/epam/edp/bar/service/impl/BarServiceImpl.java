@@ -26,6 +26,8 @@ import java.net.InetAddress;
 import java.net.UnknownHostException;
 
 /**
+ * Implementation of bar service.
+ *
  * @author Pavlo_Yemelianov
  */
 @Service
@@ -55,5 +57,4 @@ public class BarServiceImpl implements BarService {
             return "unknown host";
         }
     }
-
 }

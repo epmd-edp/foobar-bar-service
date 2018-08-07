@@ -22,6 +22,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
+ * Controller for bar service.
+ *
  * @author Pavlo_Yemelianov
  */
 @RestController

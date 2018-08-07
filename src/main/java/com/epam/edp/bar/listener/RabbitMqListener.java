@@ -23,6 +23,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
+ * RabbitMQ listener of message queue.
+ *
  * @author Pavlo_Yemelianov
  */
 @Component
@@ -39,5 +41,4 @@ public class RabbitMqListener {
     public void listenBroker(String message) {
         barService.updateSetting(message);
     }
-
 }
