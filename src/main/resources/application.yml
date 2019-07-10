@@ -1,11 +1,17 @@
 spring:
-  profiles:
-    active: prod
+  #profiles:
+  #  active: prod
   rabbitmq:
-    username: guest
-    password: guest
-    exchange: foo
-    routingkey: foobar
-
-bar:
-  setting: Angie
+    host: rabbitmq
+    port: 5672
+    username: admin
+    password: admin
+    exchange: test-exchange
+    routingkey: test
+  datasource:
+    url: jdbc:postgresql://${POSTGRES_DATABASE}:5432/${POSTGRES_DATABASE}
+    username: ${POSTGRES_USER}
+    password: ${POSTGRES_PASSWORD}
+    driverClassName: org.postgresql.Driver
+  liquibase:
+    change-log: classpath:db/db.changelog.xml

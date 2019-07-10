@@ -14,30 +14,22 @@
  * limitations under the License.
  */
 
-package com.epam.edp.bar.conroller;
+package com.epam.edp.order.listener;
 
-import com.epam.edp.bar.service.BarService;
+import com.epam.edp.config.RabbitMqConfig;
+import com.epam.edp.order.service.OrderService;
+import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Component;
 
-/**
- * Controller for bar service.
- *
- * @author Pavlo_Yemelianov
- */
-@RestController
-public class BarController {
-
-    private BarService barService;
+@Component
+public class RabbitMqListener {
 
     @Autowired
-    public BarController(BarService barService) {
-        this.barService = barService;
-    }
+    private OrderService orderService;
 
-    @GetMapping(value = "/api/setting")
-    public String getSetting() {
-        return barService.getSetting();
+    @RabbitListener(queues = RabbitMqConfig.QUEUE)
+    public void listenToBroker(String msg) {
+        orderService.accept(msg);
     }
 }
