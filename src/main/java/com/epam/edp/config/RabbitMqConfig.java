@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.epam.edp.bar.config;
+package com.epam.edp.config;
 
 import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.BindingBuilder;
@@ -24,11 +24,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-/**
- * Configuration for rabbitmq.
- *
- * @author Pavlo_Yemelianov.
- **/
 @Configuration
 public class RabbitMqConfig {
 
