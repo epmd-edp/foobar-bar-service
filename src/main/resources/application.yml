@@ -5,7 +5,7 @@ spring:
     host: rabbitmq
     port: 5672
     username: admin
-    password: admin
+    password: secret-rabbit
     exchange: test-exchange
     routingkey: test
   datasource:
