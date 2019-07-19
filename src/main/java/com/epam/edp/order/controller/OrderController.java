@@ -6,6 +6,8 @@ import com.epam.edp.order.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.time.Instant;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -18,8 +20,11 @@ public class OrderController {
     private OrderService orderService;
 
     @GetMapping("/time")
-    public String currentTime() {
-        return "time: " + Instant.now();
+    public String currentTime() throws UnknownHostException {
+        return "time: " +
+                Instant.now() +
+                " pod: " +
+                InetAddress.getLocalHost().getHostName();
     }
 
     @GetMapping("/orders")

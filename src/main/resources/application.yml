@@ -1,6 +1,4 @@
 spring:
-  #profiles:
-  #  active: prod
   rabbitmq:
     host: rabbitmq
     port: 5672
